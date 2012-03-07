@@ -53,9 +53,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="-182.05465"
-     inkscape:cy="689.19235"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="314.86708"
+     inkscape:cy="603.2626"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -85,6 +85,13 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(424.00731,40.157771)">
+    <rect
+       style="opacity:0.93999999;fill:#dddde2;fill-opacity:1;stroke:#000000;stroke-width:3.10937309;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4458"
+       width="312.56754"
+       height="175.41528"
+       x="-412.45264"
+       y="445.83713" />
     <g
        id="g3796"
        transform="translate(87.87817,509.52297)">
@@ -234,23 +241,16 @@
            y="399.80365"
            style="fill:#ea0000;fill-opacity:1" /></flowRegion><flowPara
          id="flowPara4466"
-         style="font-size:64px;fill:#ffffcb;fill-opacity:1">Persistering</flowPara></flowRoot>    <rect
-       style="opacity:0.93999999000000001;fill:#dddde2;fill-opacity:1;stroke:#000000;stroke-width:3.10937309000000006;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="rect4458"
-       width="312.56754"
-       height="175.41528"
-       x="-412.45264"
-       y="445.83713" />
-    <flowRoot
+         style="font-size:64px;fill:#ffffcb;fill-opacity:1">Persistering</flowPara></flowRoot>    <text
        xml:space="preserve"
-       id="flowRoot3803"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       transform="translate(814.5909,453.74121)"><flowRegion
-         id="flowRegion3805"><rect
-           id="rect3807"
-           width="1037.1428"
-           height="377.14285"
-           x="-1188.5714"
-           y="50.975002" /></flowRegion><flowPara
-         id="flowPara3809">Persistering</flowPara></flowRoot>  </g>
+       x="-373.97162"
+       y="544.57996"
+       id="text3829"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3831"
+         x="-373.97162"
+         y="544.57996">Persistering</tspan></text>
+  </g>
 </svg>

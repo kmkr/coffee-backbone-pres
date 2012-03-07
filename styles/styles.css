@@ -50,12 +50,6 @@ body{
   box-shadow:0px 0px 2px green;
 }
 
-.content img{
-  margin:20px;
-  border-radius:10px;
-  box-shadow:0px 0px 5px green;
-}
-
 hint{
   position:fixed;
   top:-2px;
@@ -67,14 +61,6 @@ hint{
   width: 600px;
 }
 
-pre{
-  margin-left:70px;
-  border-radius:5px;
-  box-shadow:inset 0px 0px 10px green;
-  display:block;
-  width:60%;
-  padding-top:10px;
-}
 
 p {
   font-size: 28px;
