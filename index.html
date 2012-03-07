@@ -38,28 +38,50 @@
 
 <section class='slide' id='slide3'>
   <span class='slideHead'>Hva er Backbone?</span><br/>
-  <span class='content'>
-    <li>MVC-liknende rammeverk for klienten</li>
-    <li>Hjelper til å strukturere javascript i applikasjonen &raquo; mindre jQuery-spaghetti</li> 
-    <li>Setter få krav &raquo; svært fleksibelt</li>
-    <li>Legger opp til et REST-grensesnitt for persistering</li>
-  </span>
+  <div class="content">
+    <div class="box happy">
+      <span class="label">Backbone:</span>
+      <p>Er et MVC (liknende) rammeverk for klienten</p>
+      <p>Er lightweight, minimalistisk, setter få krav og er backend agnostic</p>
+      <p>... men legger opp til et REST-grensesnitt for persistering</p>
+      <p>Er eventbasert</p>
+      <p>Har et (overraskende) rikt API</p>
+      <p>Er open source</p>
+      <p>Er godt dokumentert</p>
+    </div>
+
+    <div class="box happy">
+      <span class="label">Gevinst:</span>
+      <p>Hjelper til å strukturere kode i en JS-applikasjon</p>
+      <p>Mindre kobling, introduserer konsepter som hjelper til å opprettholde orden</p>
+      <p>No more (?) jQuery-spaghetti</p> 
+    </div>
+  </div>
 </section>
 
 <section class='slide' id='slide4'>
   <span class='slideHead'>Hva Backbone ikke er</span><br/>
-  <span class='content'>
-    <li>Ikke et DOM-verktøy</li>
-    <li>Ikke et verktøy for å håndtere browser-bugs</li>
-    <li>Ikke et voldsomt toolkit (som ext.js, dojo)</li>
-  </span>
+  <div class='content'>
+  <div class="box moody">
+    <span class="label">Hva backbone ikke er</span>
+    <p>Ikke et DOM-verktøy</p>
+    <p>Ikke et verktøy for å håndtere browser-bugs</p>
+    <p>Ikke et stort toolkit (som ExtJS.js/Sencha, Dojo)</p>
+  </div>
+  </div>
 </section>
 
 <section class='slide' id='slide5'>
+  <span class='slideHead'>Backbones arkitektur</span><br/>
+  <div class='content'>
+    <img src="images/backbone-arch.svg" />
+  </div>
+</section>
+
+<section class='slide' id='slide6'>
   <span class='slideHead'>Grunnleggende Coffee</span><br/>
   <span class='content'>
-    <li>Språk som kompilerer til JavaScript</li>
-    <li>Kan kompileres runtime med JavaScript</li>
+    <li>Språk som kompilerer til JavaScript (på server eller klient)</li>
     <span class="span50 box happy">
       <span class="label">Fordeler</span>
       <p>Øker lesbarhet</p>
