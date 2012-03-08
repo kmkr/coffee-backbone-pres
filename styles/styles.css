@@ -127,6 +127,7 @@ hint{
 
 p {
   font-size: 28px;
+  margin: 25px;
 }
 
 img {
@@ -164,10 +165,6 @@ ul {
 
 pre {
   font-size: 18px;
-}
-
-p {
-  margin: 15px 5px;
 }
 
 .angry {
@@ -236,3 +233,32 @@ div.box li {
   background-color: #c0f3c3;
   border-color: #00759a;
 }
+
+.box.important {
+  text-align: center;
+  background-color: #d9abdc;
+  border-color: #f664ff;
+  padding: 30px;
+  margin: 90px;
+}
+
+.box.important p {
+  font-size: 50px;
+}
+
+.agenda {
+
+}
+
+.agenda li {
+  margin: 40px;
+  font-size: 45px;
+}
+
+ul.collection {
+  position: relative;
+  top: -180px;
+}
+
+ul.collection li {
+  font-size: 24px;

@@ -22,16 +22,15 @@
 <section class='slide' id='slide2'>
   <span class='slideHead'>Agenda</span><br/>
   <span class='content'>
-    <ul>
+    <ol class="agenda">
       <li>Hva er (og er ikke) Backbone?</li>
       <li>Grunnleggende coffee</li>
       <li>Oversikt over konsepter i Backbone</li>
-      <li>Backbone-routers</li>
-      <li>Backbone-views</li>
-      <li>Templates</li>
       <li>Backbone-models</li>
       <li>Backbone-collections</li>
-    </ul>
+      <li>Backbone-views</li>
+      <li>Backbone-demo</li>
+    </ol>
     <div class='demo_explainer'>
       kris-mikael.krister@iteraconsulting.no
     </div>
@@ -43,20 +42,24 @@
   <div class="content">
     <div class="box happy">
       <span class="label">Backbone:</span>
-      <p>Er et MVC (liknende) rammeverk for klienten</p>
-      <p>Er lightweight, minimalistisk, setter få krav og er backend agnostic</p>
-      <p>... men legger opp til et REST-grensesnitt for persistering</p>
-      <p>Er eventbasert</p>
-      <p>Har et (overraskende) rikt API</p>
-      <p>Er open source</p>
-      <p>Er godt dokumentert</p>
+      <ul>
+        <li>Er et MVC (liknende) rammeverk for klienten</li>
+        <li>Er lightweight, minimalistisk, setter få krav og er backend agnostic</li>
+        <li>... men legger opp til et REST-grensesnitt for persistering</li>
+        <li>Er eventbasert</li>
+        <li>Har et (overraskende) rikt API</li>
+        <li>Er open source</li>
+        <li>Er godt dokumentert</li>
+      </ul>
     </div>
 
     <div class="box happy">
       <span class="label">Gevinst:</span>
-      <p>Hjelper til å strukturere kode i en JS-applikasjon</p>
-      <p>Introduserer konsepter som: frikobler kode og hjelper til å opprettholde orden i kaoset</p>
-      <p>No more (?) jQuery-spaghetti</p> 
+      <ul>
+        <li>Hjelper til å strukturere kode i en JS-applikasjon</li>
+        <li>Introduserer konsepter som: frikobler kode og hjelper til å opprettholde orden i kaoset</li>
+        <li>No more (?) jQuery-spaghetti</li> 
+      </ul>
     </div>
   </div>
 </section>
@@ -64,12 +67,14 @@
 <section class='slide' id='slide4'>
   <span class='slideHead'>Hva Backbone ikke er</span><br/>
   <div class='content'>
-  <div class="box moody">
-    <span class="label">Hva backbone ikke er</span>
-    <p>Ikke et DOM-verktøy</p>
-    <p>Ikke et verktøy for å håndtere browser-bugs</p>
-    <p>Ikke et stort toolkit (som ExtJS.js/Sencha, Dojo)</p>
-  </div>
+    <div class="box moody">
+      <span class="label">Hva backbone ikke er</span>
+      <ul>
+        <li>Ikke et DOM-verktøy</li>
+        <li>Ikke et verktøy for å håndtere browser-bugs</li>
+        <li>Ikke et stort toolkit (som ExtJS.js/Sencha, Dojo)</p>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -108,7 +113,7 @@
 
     <div class="coffee box span50">
       <span class="label">Coffee</span>
-    <pre class="span50 prettyprint lang-javascript">
+      <pre class="span50 prettyprint lang-javascript">
 # Assignment:
 number   = 42
 opposite = true
@@ -138,12 +143,12 @@ math =
 if @studyingEconomics
   buy()  while supply &gt; demand
   sell() until supply &gt; demand
-    </pre>
-  </div>
+      </pre>
+    </div>
 
     <div class="js box span50">
       <span class="label">JS</span>
-    <pre class="span50 prettyprint">
+      <pre class="span50 prettyprint">
 var cubes, list, math, num, number, opposite, square;
 
 number = 42;
@@ -177,8 +182,8 @@ if (this.studyingEconomics) {
     sell();
   }
 }
-    </pre>
-  </div>
+      </pre>
+    </div>
 
   </div>
 </section>
@@ -189,7 +194,7 @@ if (this.studyingEconomics) {
 
     <div class="coffee box span50">
       <span class="label">Coffee</span>
-    <pre class="span50 prettyprint lang-javascript">
+      <pre class="span50 prettyprint lang-javascript">
 # Array slicing/splicing
 numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 copy    = numbers[0...numbers.length]
@@ -203,12 +208,12 @@ letTheWildRumpusBegin() unless answer is no
 if car.speed &lt; limit then accelerate()
 winner = yes if pick in [47, 92, 13]
 print inspect "My name is #{@name}"
-    </pre>
-  </div>
+      </pre>
+    </div>
 
     <div class="js box span50">
       <span class="label">JS</span>
-    <pre class="span50 prettyprint">
+      <pre class="span50 prettyprint">
 var copy, middle, numbers;
 numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 copy = numbers.slice(0, numbers.length);
@@ -223,8 +228,8 @@ if (car.speed &lt; limit) accelerate();
 if (pick === 47 || pick === 92 || pick === 13) winner = true;
 
 print(inspect("My name is " + this.name));
-    </pre>
-  </div>
+      </pre>
+    </div>
 
   </div>
 </section>
@@ -257,18 +262,18 @@ print(inspect("My name is " + this.name));
 
     <div class="coffee box span50">
       <span class="label">Coffee</span>
-    <pre class="span50 prettyprint lang-javascript">
+      <pre class="span50 prettyprint lang-javascript">
 class Animal extends Backbone.Model
   urlRoot: '/animals'
 
   laysEggs: -&gt;
     not @get('isMammal')
-    </pre>
-  </div>
+      </pre>
+    </div>
 
     <div class="js box span50">
       <span class="label">JS</span>
-    <pre class="span50 prettyprint">
+      <pre class="span50 prettyprint">
 var Animal = Backbone.Model.extend({
   urlRoot: '/animals',
 
@@ -276,16 +281,16 @@ var Animal = Backbone.Model.extend({
     return !this.get('isMammal')
   }
 });
-    </pre>
-  </div>
+      </pre>
+    </div>
 
-  <ul>
-    <li>model.save([attributes], [options])</li>
-    <li>model.fetch([options])</li>
-    <li>model.isValid()</li>
-    <li>model.get(attribute)</li>
-    <li>model.set(attributes, [options])</li>
-  </ul>
+    <ul>
+      <li>model.save([attributes], [options])</li>
+      <li>model.fetch([options])</li>
+      <li>model.isValid()</li>
+      <li>model.get(attribute)</li>
+      <li>model.set(attributes, [options])</li>
+    </ul>
 
   </div>
 </section>
@@ -302,7 +307,7 @@ var Animal = Backbone.Model.extend({
 
     <div class="coffee box span50">
       <span class="label">Coffee</span>
-    <pre class="span50 prettyprint lang-javascript">
+      <pre class="span50 prettyprint lang-javascript">
 class NationalPark extends Backbone.Collection
   model: Animal
   url: "/animals"
@@ -312,12 +317,12 @@ class NationalPark extends Backbone.Collection
 
   isThrilling: -&gt;
     @any((animal) -&gt; animal.get('type') in [ 'crocodile', 'lion', 'sword fish' ])
-    </pre>
-  </div>
+      </pre>
+    </div>
 
     <div class="js box span50">
       <span class="label">JS</span>
-    <pre class="span50 prettyprint">
+      <pre class="span50 prettyprint">
 var NationalPark = Backbone.Collection.extend({
   model: Animal,
   url: '/animals',
@@ -337,19 +342,21 @@ var NationalPark = Backbone.Collection.extend({
     };
   }
 });
-    </pre>
-  </div>
+      </pre>
+    </div>
 
-  <ul>
-    <li>collection.forEach</li>
-    <li>collection.map</li>
-    <li>collection.reduce</li>
-    <li>collection.max</li>
-    <li>collection.min</li>
-    <li>collection.sortBy</li>
-    <li>collection.groupBy</li>
-  </ul>
-  </pre>
+    <ul class="collection">
+      <li>collection.forEach(iterator)</li>
+      <li>collection.map(iterator)</li>
+      <li>collection.get(id)</li>
+      <li>collection.length</li>
+      <li>collection.max(iterator)</li>
+      <li>collection.min(iterator)</li>
+      <li>collection.sortBy(iterator)</li>
+      <li>collection.groupBy(iterator)</li>
+      <li>...</li>
+    </ul>
+    </pre>
 
   </div>
 </section>
@@ -367,7 +374,7 @@ var NationalPark = Backbone.Collection.extend({
 
     <div class="coffee box span50">
       <span class="label">Coffee</span>
-    <pre class="span50 prettyprint lang-javascript">
+      <pre class="span50 prettyprint lang-javascript">
 class IndexView extends Backbone.View
   template: _.template(IndexTemplate)
 
@@ -381,7 +388,7 @@ class IndexView extends Backbone.View
     )
 
   render: -&gt;
-    $el.html(@template)
+    @$el.html(@template)
     @
 
     </pre>
@@ -389,15 +396,33 @@ class IndexView extends Backbone.View
 
 
   <div class="span50">
-  <ul>
-    <li>view.el</li>
-    <li>view.$el</li>
-    <li>view.id</li>
-    <li>view.tagName</li>
-    <li>view.className</li>
-  </ul>
-  </pre>
+    <ul>
+      <li>view.el</li>
+      <li>view.$el</li>
+      <li>view.id</li>
+      <li>view.tagName</li>
+      <li>view.className</li>
+    </ul>
+    </pre>
   </div>
+
+</div>
+</section>
+
+<section class='slide' id="slide13">
+  <span class='slideHead'>Hvordan lime dette sammen?</span><br/>
+  <div class='content'>
+
+    <ul>
+      <li>Last inn javascriptene</li>
+      <li>Opprett en eller flere collections</li>
+      <li>Opprett en router</li>
+      <li>Kjør <code>Backbone.history.start()</code></li>
+    </ul>
+
+    <div class="box important">
+      <p>National park demo</p>
+    </div>
 
   </div>
 </section>
