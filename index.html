@@ -22,14 +22,16 @@
 <section class='slide' id='slide2'>
   <span class='slideHead'>Agenda</span><br/>
   <span class='content'>
-    <li>Hva er (og er ikke) Backbone?</li>
-    <li>Grunnleggende coffee</li>
-    <li>Oversikt over konsepter i Backbone</li>
-    <li>Backbone-routers</li>
-    <li>Backbone-views</li>
-    <li>Templates</li>
-    <li>Backbone-models</li>
-    <li>Backbone-collections</li>
+    <ul>
+      <li>Hva er (og er ikke) Backbone?</li>
+      <li>Grunnleggende coffee</li>
+      <li>Oversikt over konsepter i Backbone</li>
+      <li>Backbone-routers</li>
+      <li>Backbone-views</li>
+      <li>Templates</li>
+      <li>Backbone-models</li>
+      <li>Backbone-collections</li>
+    </ul>
     <div class='demo_explainer'>
       kris-mikael.krister@iteraconsulting.no
     </div>
@@ -53,7 +55,7 @@
     <div class="box happy">
       <span class="label">Gevinst:</span>
       <p>Hjelper til å strukturere kode i en JS-applikasjon</p>
-      <p>Mindre kobling, introduserer konsepter som hjelper til å opprettholde orden</p>
+      <p>Introduserer konsepter som: frikobler kode og hjelper til å opprettholde orden i kaoset</p>
       <p>No more (?) jQuery-spaghetti</p> 
     </div>
   </div>
@@ -81,7 +83,9 @@
 <section class='slide' id='slide6'>
   <span class='slideHead'>Grunnleggende Coffee</span><br/>
   <span class='content'>
-    <li>Språk som kompilerer til JavaScript (på server eller klient)</li>
+    <ul>
+      <li>Språk som kompilerer til JavaScript (på server eller klient)</li>
+    </ul>
     <span class="span50 box happy">
       <span class="label">Fordeler</span>
       <p>Øker lesbarhet</p>
@@ -102,6 +106,8 @@
   <span class='slideHead'>Grunnleggende Coffee</span><br/>
   <div class='content'>
 
+    <div class="coffee box span50">
+      <span class="label">Coffee</span>
     <pre class="span50 prettyprint lang-javascript">
 # Assignment:
 number   = 42
@@ -113,6 +119,7 @@ number = -42 if opposite
 # Functions:
 square = (x) -&gt; x * x
 
+
 # Arrays:
 list = [1, 2, 3, 4, 5]
 
@@ -121,14 +128,25 @@ math =
   root:   Math.sqrt
   square: square
   cube:   (x) -&gt; x * square x
-    </pre>
 
+# this
+-&gt; @
+
+
+
+# loops
+if @studyingEconomics
+  buy()  while supply &gt; demand
+  sell() until supply &gt; demand
+    </pre>
+  </div>
+
+    <div class="js box span50">
+      <span class="label">JS</span>
     <pre class="span50 prettyprint">
-var cubes, list, math, num, number, opposite, race, square,
-  __slice = Array.prototype.slice;
+var cubes, list, math, num, number, opposite, square;
 
 number = 42;
-
 opposite = true;
 
 if (opposite) number = -42;
@@ -146,7 +164,21 @@ math = {
     return x * square(x);
   }
 };
+
+function() {
+  return this;
+}
+
+if (this.studyingEconomics) {
+  while (supply &gt; demand) {
+    buy();
+  }
+  while (!(supply &gt; demand)) {
+    sell();
+  }
+}
     </pre>
+  </div>
 
   </div>
 </section>
