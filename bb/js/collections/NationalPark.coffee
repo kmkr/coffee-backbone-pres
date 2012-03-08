@@ -1,1 +1,1 @@
-class np.NationalPark extends Backbone.Collection
+class np.collections.NationalPark extends Backbone.Collection

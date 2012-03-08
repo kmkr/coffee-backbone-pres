@@ -1,2 +1,2 @@
-class np.Animal extends Backbone.View
+class np.models.Animal extends Backbone.View
 
