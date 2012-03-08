@@ -359,25 +359,45 @@ var NationalPark = Backbone.Collection.extend({
   <div class='content'>
 
     <ul>
-      <li>(Sorterte) sett med modeller</li>
+      <li>Backes opp av modeller og/eller collections</li>
+      <li>Tilknyttet  HTML-template</li>
+      <li>Events som skjer på templaten, delegeres til funksjoner i viewet</li>
+      <li>Overskriv funksjonen "render"</li>
     </ul>
 
     <div class="coffee box span50">
       <span class="label">Coffee</span>
     <pre class="span50 prettyprint lang-javascript">
+class IndexView extends Backbone.View
+  template: _.template(IndexTemplate)
+
+  events:
+    "click button"      : "showAnimals"
+
+  showAnimals: -&gt;
+    @collection.forEach( (animal) =&gt;
+      p = $('&lt;p&gt;').text(animal.get('type'))
+      $(@el).append(p)
+    )
+
+  render: -&gt;
+    $el.html(@template)
+    @
+
     </pre>
   </div>
 
-    <div class="js box span50">
-      <span class="label">JS</span>
-    <pre class="span50 prettyprint">
-    </pre>
-  </div>
 
+  <div class="span50">
   <ul>
-    <li>collection.forEach</li>
+    <li>view.el</li>
+    <li>view.$el</li>
+    <li>view.id</li>
+    <li>view.tagName</li>
+    <li>view.className</li>
   </ul>
   </pre>
+  </div>
 
   </div>
 </section>

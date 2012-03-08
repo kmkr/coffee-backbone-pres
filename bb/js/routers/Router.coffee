@@ -4,7 +4,7 @@ class np.routers.Router extends Backbone.Router
 
 
   index: ->
-    @swap(new np.views.IndexView())
+    @swap(new np.views.IndexView({collection: np.collections.nationalPark }))
 
 
   swap: (newView) ->
