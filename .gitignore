@@ -1,0 +1,2 @@
+bb/js/*/*.js
+!bb/js/libs/*.js

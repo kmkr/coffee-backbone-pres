@@ -1,10 +1,7 @@
-html{
-background-color: #C8DE9D;
+body{
+background-color: rgba(200, 222, 157, 0.5);
 background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent), to(transparent));
 background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
-background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
-background-image: -ms-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
-background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
 background-image: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
 -webkit-background-size: 50px 50px;
 -moz-background-size: 50px 50px;
@@ -69,19 +66,20 @@ body{
  overflow:hidden;
 }
 
-.slide{
+.slide {
   height:100%;
   width:100%;
+  padding: 80px 20px;
+}
+
+#slide1{
   background:-webkit-gradient(radial,
                             50% 50%, 0,
                             50% 50%, 500,
                             from(white), to(#A2D2ED)) no-repeat #A2D2ED;
-  padding: 80px 20px;
 }
 
 .slide:not(#slide1){
-  background:rgba(255,255,255,0.5);
-  background-image: url('../images/chrome.png');
   background-position:bottom right;
   background-repeat: no-repeat;
 }
@@ -96,6 +94,10 @@ body{
   display: none;
   position:relative;
   font-size:50px;
+}
+
+.content {
+  width: 98%;
 }
 
 .content li{
@@ -148,7 +150,7 @@ img {
 }
 
 .box pre {
-  width: 98%;
+  max-width: 90%;
   border: 0 !important;
 }
 

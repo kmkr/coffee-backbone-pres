@@ -3,10 +3,10 @@
 <title>Backbone med Coffee</title>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <script type='text/javascript' src='js/jquery-1.7.1.min.js'> </script>
-  <script type='text/javascript' src="js/slides.js"></script>
   <script type='text/javascript' src="js/prettify/prettify.js"></script>
+  <script type='text/javascript' src="js/slides.js"></script>
+  <script type='text/javascript' src="js/custom.js"></script>
   <link rel="stylesheet" href="styles/styles.css" />
-  <link rel="stylesheet" href="styles/allcss.css" />
   <link rel="stylesheet" href="styles/prettify.css" />
   <link href='http://fonts.googleapis.com/css?family=Port+Lligat+Slab' rel='stylesheet' type='text/css'>
 </head>
@@ -183,9 +183,204 @@ if (this.studyingEconomics) {
   </div>
 </section>
 
-<script>
-  prettyPrint();
-</script>
+<section class='slide' id='slide8'>
+  <span class='slideHead'>Grunnleggende Coffee</span><br/>
+  <div class='content'>
+
+    <div class="coffee box span50">
+      <span class="label">Coffee</span>
+    <pre class="span50 prettyprint lang-javascript">
+# Array slicing/splicing
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+copy    = numbers[0...numbers.length]
+middle  = copy[3..6]
+
+# Operators og aliases
+
+launch() if ignition is on
+volume = 10 if band isnt SpinalTap
+letTheWildRumpusBegin() unless answer is no
+if car.speed &lt; limit then accelerate()
+winner = yes if pick in [47, 92, 13]
+print inspect "My name is #{@name}"
+    </pre>
+  </div>
+
+    <div class="js box span50">
+      <span class="label">JS</span>
+    <pre class="span50 prettyprint">
+var copy, middle, numbers;
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+copy = numbers.slice(0, numbers.length);
+middle = copy.slice(3, 7);
+
+var volume, winner;
+if (ignition === true) launch();
+if (band !== SpinalTap) volume = 10;
+if (answer !== false) letTheWildRumpusBegin();
+if (car.speed &lt; limit) accelerate();
+
+if (pick === 47 || pick === 92 || pick === 13) winner = true;
+
+print(inspect("My name is " + this.name));
+    </pre>
+  </div>
+
+  </div>
+</section>
+
+<section class='slide' id='slide9'>
+  <span class='slideHead'>Grunnleggende Coffee - Fat arrow</span><br/>
+  <div class='content'>
+
+    <div class="coffee box">
+      <span class="label">Coffee</span>
+      <pre class="prettyprint lang-javascript">
+      =&gt;
+      </pre>
+    </div>
+
+  </div>
+</section>
+
+<section class='slide' id="slide10">
+  <span class='slideHead'>Models</span><br/>
+  <div class='content'>
+
+    <ul>
+      <li>Databærere</li>
+      <li>Kobling til persistering (REST, Localstorage, Websockets?)</li>
+      <li>Domenespesifike metoder</li>
+      <li>Klientsidevalidering</li>
+      <li>Sender "change", "create", "destroy", "error"-events</li>
+    </ul>
+
+    <div class="coffee box span50">
+      <span class="label">Coffee</span>
+    <pre class="span50 prettyprint lang-javascript">
+class Animal extends Backbone.Model
+  urlRoot: '/animals'
+
+  laysEggs: -&gt;
+    not @get('isMammal')
+    </pre>
+  </div>
+
+    <div class="js box span50">
+      <span class="label">JS</span>
+    <pre class="span50 prettyprint">
+var Animal = Backbone.Model.extend({
+  urlRoot: '/animals',
+
+  laysEggs: function() {
+    return !this.get('isMammal')
+  }
+});
+    </pre>
+  </div>
+
+  <ul>
+    <li>model.save([attributes], [options])</li>
+    <li>model.fetch([options])</li>
+    <li>model.isValid()</li>
+    <li>model.get(attribute)</li>
+    <li>model.set(attributes, [options])</li>
+  </ul>
+
+  </div>
+</section>
+
+<section class='slide' id="slide11">
+  <span class='slideHead'>Collections</span><br/>
+  <div class='content'>
+
+    <ul>
+      <li>(Sorterte) sett med modeller</li>
+      <li>Gir et rikt API ved å delegere til Underscore</li>
+      <li>Sender "change", "add", "remove"-events</li>
+    </ul>
+
+    <div class="coffee box span50">
+      <span class="label">Coffee</span>
+    <pre class="span50 prettyprint lang-javascript">
+class NationalPark extends Backbone.Collection
+  model: Animal
+  url: "/animals"
+
+  mammals: -&gt;
+    @filter((animal) -&gt; animal.isMammal())
+
+  isThrilling: -&gt;
+    @any((animal) -&gt; animal.get('type') in [ 'crocodile', 'lion', 'sword fish' ])
+    </pre>
+  </div>
+
+    <div class="js box span50">
+      <span class="label">JS</span>
+    <pre class="span50 prettyprint">
+var NationalPark = Backbone.Collection.extend({
+  model: Animal,
+  url: '/animals',
+
+  mammals = function() {
+    return this.filter(function(animal) {
+      return animal.isMammal();
+    }),
+
+  isThrilling = function() {
+    return this.any(function(animal) {
+      var _ref;
+      return (_ref = animal.get('type')) === 'crocodile' ||
+        _ref === 'lion' ||
+        _ref === 'sword fish';
+      });
+    };
+  }
+});
+    </pre>
+  </div>
+
+  <ul>
+    <li>collection.forEach</li>
+    <li>collection.map</li>
+    <li>collection.reduce</li>
+    <li>collection.max</li>
+    <li>collection.min</li>
+    <li>collection.sortBy</li>
+    <li>collection.groupBy</li>
+  </ul>
+  </pre>
+
+  </div>
+</section>
+
+<section class='slide' id="slide12">
+  <span class='slideHead'>Views</span><br/>
+  <div class='content'>
+
+    <ul>
+      <li>(Sorterte) sett med modeller</li>
+    </ul>
+
+    <div class="coffee box span50">
+      <span class="label">Coffee</span>
+    <pre class="span50 prettyprint lang-javascript">
+    </pre>
+  </div>
+
+    <div class="js box span50">
+      <span class="label">JS</span>
+    <pre class="span50 prettyprint">
+    </pre>
+  </div>
+
+  <ul>
+    <li>collection.forEach</li>
+  </ul>
+  </pre>
+
+  </div>
+</section>
 
 </body>
 </html>
