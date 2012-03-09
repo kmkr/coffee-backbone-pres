@@ -259,3 +259,12 @@ div.box li {
 ul.api li {
   font-size: 20px;
 }
+
+ul.resources li {
+  font-size: 40px; 
+}
+
+ul.resources li a {
+  color: #08C;
+  text-decoration: none;
+}
