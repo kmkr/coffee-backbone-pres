@@ -1,5 +1,5 @@
 np.templates.IndexTemplate = """
 <p>Index!</p>
 
-<button>Vis meg dyrene</button>
+<button class="btn btn-primary">Vis meg dyrene</button>
 """

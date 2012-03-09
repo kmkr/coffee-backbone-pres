@@ -6,10 +6,13 @@ class np.views.IndexView extends Backbone.View
 
 
   showAnimals: ->
+    ul = $('<ul>')
     @collection.forEach( (animal) =>
-      p = $('<p>').text(animal.get('type'))
-      @$el.append(p)
+      li = $('<li>').text(animal.get('type'))
+      ul.append(li)
     )
+    @$el.append(ul)
+    @$('ul:last').hide().show('slow')
 
   render: ->
     @$el.html(@template)
