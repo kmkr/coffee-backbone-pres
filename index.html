@@ -48,8 +48,7 @@
         <li>... men legger opp til et REST-grensesnitt for persistering</li>
         <li>Er eventbasert</li>
         <li>Har et (overraskende) rikt API</li>
-        <li>Er open source</li>
-        <li>Er godt dokumentert</li>
+        <li>Er open source og godt dokumentert</li>
       </ul>
     </div>
 
@@ -149,7 +148,8 @@ if @studyingEconomics
     <div class="js box span50">
       <span class="label">JS</span>
       <pre class="span50 prettyprint">
-var cubes, list, math, num, number, opposite, square;
+var cubes, list, math, num, number, opposite,
+  square;
 
 number = 42;
 opposite = true;
@@ -197,16 +197,22 @@ if (this.studyingEconomics) {
       <pre class="span50 prettyprint lang-javascript">
 # Array slicing/splicing
 numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
 copy    = numbers[0...numbers.length]
+
 middle  = copy[3..6]
 
 # Operators og aliases
-
 launch() if ignition is on
+
 volume = 10 if band isnt SpinalTap
+
 letTheWildRumpusBegin() unless answer is no
+
 if car.speed &lt; limit then accelerate()
+
 winner = yes if pick in [47, 92, 13]
+
 print inspect "My name is #{@name}"
       </pre>
     </div>
@@ -215,17 +221,26 @@ print inspect "My name is #{@name}"
       <span class="label">JS</span>
       <pre class="span50 prettyprint">
 var copy, middle, numbers;
+
 numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 copy = numbers.slice(0, numbers.length);
+
 middle = copy.slice(3, 7);
 
 var volume, winner;
+
 if (ignition === true) launch();
+
 if (band !== SpinalTap) volume = 10;
+
 if (answer !== false) letTheWildRumpusBegin();
+
 if (car.speed &lt; limit) accelerate();
 
-if (pick === 47 || pick === 92 || pick === 13) winner = true;
+if (pick === 47 ||
+  pick === 92 ||
+  pick === 13) winner = true;
 
 print(inspect("My name is " + this.name));
       </pre>
@@ -284,7 +299,7 @@ var Animal = Backbone.Model.extend({
       </pre>
     </div>
 
-    <ul>
+    <ul class="api">
       <li>model.save([attributes], [options])</li>
       <li>model.fetch([options])</li>
       <li>model.isValid()</li>
@@ -316,7 +331,10 @@ class NationalPark extends Backbone.Collection
     @filter((animal) -&gt; animal.isMammal())
 
   isThrilling: -&gt;
-    @any((animal) -&gt; animal.get('type') in [ 'crocodile', 'lion', 'sword fish' ])
+    @any((animal) -&gt; animal.get('type') in [
+        'crocodile',
+        'lion',
+        'sword fish' ])
       </pre>
     </div>
 
@@ -335,7 +353,8 @@ var NationalPark = Backbone.Collection.extend({
   isThrilling = function() {
     return this.any(function(animal) {
       var _ref;
-      return (_ref = animal.get('type')) === 'crocodile' ||
+      return (_ref = animal.get('type')) ===
+        'crocodile' ||
         _ref === 'lion' ||
         _ref === 'sword fish';
       });
@@ -345,7 +364,17 @@ var NationalPark = Backbone.Collection.extend({
       </pre>
     </div>
 
-    <ul class="collection">
+    </pre>
+
+  </div>
+</section>
+
+<section class='slide' id="slide12">
+  <span class='slideHead'>Collections API</span><br/>
+  <div class='content'>
+
+    <ul>
+      <li>collection.create(attributes)</li>
       <li>collection.forEach(iterator)</li>
       <li>collection.map(iterator)</li>
       <li>collection.get(id)</li>
@@ -354,6 +383,8 @@ var NationalPark = Backbone.Collection.extend({
       <li>collection.min(iterator)</li>
       <li>collection.sortBy(iterator)</li>
       <li>collection.groupBy(iterator)</li>
+      <li>collection.sort()</li>
+      <li>collection.invoke(methodName, [*arguments])</li>
       <li>...</li>
     </ul>
     </pre>
@@ -361,7 +392,7 @@ var NationalPark = Backbone.Collection.extend({
   </div>
 </section>
 
-<section class='slide' id="slide12">
+<section class='slide' id="slide13">
   <span class='slideHead'>Views</span><br/>
   <div class='content'>
 
@@ -409,12 +440,13 @@ class IndexView extends Backbone.View
 </div>
 </section>
 
-<section class='slide' id="slide13">
+<section class='slide' id="slide14">
   <span class='slideHead'>Hvordan lime dette sammen?</span><br/>
   <div class='content'>
 
     <ul>
-      <li>Last inn javascriptene</li>
+      <li>Lag javascript for modeller, views, collections routers</li>
+      <li>Last inn disse javascriptene med <code>script src</code></li>
       <li>Opprett en eller flere collections</li>
       <li>Opprett en router</li>
       <li>Kjør <code>Backbone.history.start()</code></li>
