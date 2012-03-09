@@ -264,11 +264,15 @@ ul.api li {
   font-size: 20px;
 }
 
-ul.resources li {
+table {
+  margin: 10px auto;
+  }
+.resources td {
   font-size: 40px; 
+  padding: 10px;
 }
 
-ul.resources li a {
+a {
   color: #08C;
   text-decoration: none;
 }

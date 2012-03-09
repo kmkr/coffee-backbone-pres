@@ -46,7 +46,6 @@
         <li>Er et MVC (liknende) rammeverk for klienten</li>
         <li>Er lightweight, minimalistisk, setter få krav og er backend agnostic</li>
         <li>... men legger opp til et REST-grensesnitt for persistering</li>
-        <li>Er eventbasert</li>
         <li>Har et (overraskende) rikt API</li>
         <li>Er open source og godt dokumentert</li>
       </ul>
@@ -272,7 +271,7 @@ print(inspect("My name is " + this.name));
       <li>Kobling til persistering (REST, Localstorage, Websockets?)</li>
       <li>Domenespesifike metoder</li>
       <li>Klientsidevalidering</li>
-      <li>Sender "change", "create", "destroy", "error"-events</li>
+      <li>Sender "change", "destroy", "sync", "error"-events</li>
     </ul>
 
     <div class="coffee box span50">
@@ -316,8 +315,7 @@ var Animal = Backbone.Model.extend({
 
     <ul>
       <li>(Sorterte) sett med modeller</li>
-      <li>Gir et rikt API ved å delegere til Underscore</li>
-      <li>Sender "change", "add", "remove"-events</li>
+      <li>Sender "change", "add", "remove", "reset"-events</li>
     </ul>
 
     <div class="coffee box span50">
@@ -370,7 +368,7 @@ var NationalPark = Backbone.Collection.extend({
 </section>
 
 <section class='slide' id="slide12">
-  <span class='slideHead'>Collections API</span><br/>
+  <span class='slideHead'>Eksempler fra Collections' API</span><br/>
   <div class='content'>
 
     <ul>
@@ -463,13 +461,13 @@ class IndexView extends Backbone.View
   <span class='slideHead'>Ressurser</span><br/>
   <div class='content'>
 
-    <ul class="resources">
-      <li>Dokumentasjon og download: <a href="http://documentcloud.github.com/backbone/">http://documentcloud.github.com/backbone/</a></li>
-      <li>Gratisbok: <a href="https://github.com/addyosmani/backbone-fundamentals">https://github.com/addyosmani/backbone-fundamentals</a></li>
-      <li>Litt hjelp for å unngå memleaks: <a href="https://github.com/thoughtbot/backbone-support">https://github.com/thoughtbot/backbone-support</a></li>
-      <li>Fin bok: <a href="https://workshops.thoughtbot.com/backbone-js-on-rails">https://workshops.thoughtbot.com/backbone-js-on-rails</a></li>
-      <li>Denne presentasjonen: <a href="http://kmkr.github.com/coffee-backbone-pres/">http://kmkr.github.com/coffee-backbone-pres/</a></li>
-    </ul>
+    <table class="resources">
+      <tr><td>Dokumentasjon og download:</td><td><a href="http://documentcloud.github.com/backbone/">http://documentcloud.github.com/backbone/</a></td></tr>
+      <tr><td>Unngå memleaks:</td><td><a href="https://github.com/thoughtbot/backbone-support">https://github.com/thoughtbot/backbone-support</a></td></tr>
+      <tr><td>Gratisbok</td><td><a href="https://github.com/addyosmani/backbone-fundamentals">https://github.com/addyosmani/backbone-fundamentals</a></td></tr>
+      <tr><td>Ikke-gratis bok</td><td><a href="https://workshops.thoughtbot.com/backbone-js-on-rails">https://workshops.thoughtbot.com/backbone-js-on-rails</a></td></tr>
+      <tr><td>Denne presentasjonen</td><td><a href="http://kmkr.github.com/coffee-backbone-pres/">http://kmkr.github.com/coffee-backbone-pres/</a></td></tr>
+    </table>
 
   </div>
 </section>
