@@ -4,7 +4,6 @@ class np.views.IndexView extends Backbone.View
   events:
     "click button"      : "showAnimals"
 
-
   showAnimals: ->
     ul = $('<ul>')
     @collection.forEach( (animal) =>
@@ -12,7 +11,7 @@ class np.views.IndexView extends Backbone.View
       ul.append(li)
     )
     @$el.append(ul)
-    @$('ul:last').hide().show('slow')
+    @$('ul:last').show('slow')
 
   render: ->
     @$el.html(@template)
