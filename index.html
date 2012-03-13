@@ -43,7 +43,7 @@
     <div class="box happy">
       <span class="label">Backbone:</span>
       <ul>
-        <li>Er et MVC (liknende) rammeverk for klienten</li>
+        <li>Er et MVC (liknende) javascriptrammeverk</li>
         <li>Er lightweight, minimalistisk, setter få krav og er backend agnostic</li>
         <li>... men legger opp til et REST-grensesnitt for persistering</li>
         <li>Har et (overraskende) rikt API</li>
@@ -55,7 +55,7 @@
       <span class="label">Gevinst:</span>
       <ul>
         <li>Hjelper til å strukturere kode i en JS-applikasjon</li>
-        <li>Introduserer konsepter som: frikobler kode og hjelper til å opprettholde orden i kaoset</li>
+        <li>Introduserer konsepter som frikobler kode og hjelper til å opprettholde orden</li>
         <li>No more (?) jQuery-spaghetti</li> 
       </ul>
     </div>
@@ -413,7 +413,7 @@ class IndexView extends Backbone.View
   showAnimals: -&gt;
     @collection.forEach( (animal) =&gt;
       p = $('&lt;p&gt;').text(animal.get('type'))
-      $(@el).append(p)
+      @$el.append(p)
     )
 
   render: -&gt;
